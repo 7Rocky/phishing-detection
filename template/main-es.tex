@@ -2,7 +2,7 @@
 
 \newcommand*{\Author}{Roberto Gesteira Miñarro}
 \newcommand*{\Keywords}{Red neuronal, árbol de decisión, clustering, reglas de asociación}
-\newcommand*{\Subject}{Detección de Phishing}
+\newcommand*{\Subject}{Detección de phishing}
 \newcommand*{\Title}{Detección de phishing}
 
 \usepackage{amsmath}
@@ -18,7 +18,6 @@
 \usepackage[breaklinks]{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[newfloat]{minted}
-\usepackage{multicol}
 \usepackage{parskip}
 \usepackage{siunitx}
 \usepackage{titletoc}
@@ -40,7 +39,6 @@
 \addto\captionsspanish{\renewcommand{\listfigurename}{Índice de figuras\newline}}
 
 \newcommand*{\figref}[1]{\figurename~\ref{fig:#1}}
-\newcommand*{\sectionref}[1]{\hyperlink{sec:#1}{\sectionname~{#1}}}
 
 \hypersetup{
   colorlinks=true,
@@ -75,7 +73,6 @@
   \vspace{-1.2cm}
 }
 
-\newcommand*{\cluster}{\textit{cluster}}
 \newcommand*{\clusters}{\textit{clusters}}
 \newcommand*{\clustering}{\textit{clustering}}
 \newcommand*{\Clustering}{\textit{Clustering}}
@@ -270,7 +267,7 @@ phishing            201        332
 
     El siguiente análisis a realizar se basa en mapas auto-organizados de Kohonen. Este modelo es un tipo de red neuronal que puede ser supervisado o no supervisado.
 
-    Los parámetros principales de este modelo son el número de neuronas, las dimensiones y la topología del mapa. Tras realizar varias pruebas con distintas dimensiones y topologías, se vio que un modelo se obtenía con una topología hexagonal y dimensiones $3 \times 3$ ($9$ neuronas). Como coeficiente de aprendizaje $\alpha$ se utiliza el que proporciona el algoritmo del paquete \texttt{kohonen} por defecto.
+    Los parámetros principales de este modelo son el número de neuronas, las dimensiones y la topología del mapa. Tras realizar varias pruebas con distintas dimensiones y topologías, se vio que un buen modelo se obtenía con una topología hexagonal y dimensiones $3 \times 3$ ($9$ neuronas). Como coeficiente de aprendizaje $\alpha$ se utiliza el que proporciona el algoritmo del paquete \texttt{kohonen} por defecto.
 
     \subsection{Modelo no supervisado}
 
@@ -328,9 +325,9 @@ phishing            126        407
 
   \section{KNN}
 
-    Otro modelo de clasificación que se puede utilizar es KNN (\textit{K-Nearest-Neighbours}). Se trata de un algoritmo que utiliza directamente el conjunto de entrenamiento para predecir la clase de los elementos que se introduzcan al modelo.
+    Otro modelo de clasificación que se puede utilizar es KNN ($K$-\textit{Nearest-Neighbours}). Se trata de un algoritmo que utiliza directamente el conjunto de entrenamiento para predecir la clase de los elementos que se introduzcan al modelo.
 
-    Se utiliza un conjunto de entrenamiento que supone un \SI{75}{\percent} del \dataset\ y el resto se destina al conjunto de test. El valor de \textit{K} óptimo es de $5$, lo cual significa que el dato entrante al modelo se compara con los 5 elementos del conjunto de entrenamiento más cercanos (los vecinos) y se le otorga la clase mayoritaria de ese grupo. La distancia utilizada es la euclídea.
+    Se utiliza un conjunto de entrenamiento que supone un \SI{75}{\percent} del \dataset\ y el resto se destina al conjunto de test. El valor de $K$ óptimo es de $5$, lo cual significa que el dato entrante al modelo se compara con los $5$ elementos del conjunto de entrenamiento más cercanos (los vecinos) y se le otorga la clase mayoritaria de ese grupo. La distancia utilizada es la euclídea.
 
     Al introducir el conjunto de test, se obtiene la siguiente matriz de confusión, con una precisión del \SI{94.35}{\percent}:
 
